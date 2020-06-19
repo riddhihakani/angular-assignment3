@@ -1,0 +1,16 @@
+<div ng-repeat="item in menu.foundItems">
+    <!-- <div class="clearfix" ng-if="$index % 2 == 0"></div> -->
+    <div class="col-sm-2">
+       {{item.short_name}}
+    </div>
+    <div class="col-sm-4">
+        {{item.name}}
+    </div>
+    <div class="col-sm-4">
+        {{item.description}}
+    </div>
+    <div class="col-sm-2">
+        <button class="btn btn-outline-primary" ng-click="menu.onRemove({index: $index})">Remove Item</button>
+    </div>
+</div>
+<div class="alert alert-warning" role="alert" ng-show="menu.onEmpty">{{menu.onEmpty}}</div>
