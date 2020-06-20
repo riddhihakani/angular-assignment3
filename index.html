@@ -1,41 +1,30 @@
-<!doctype html>
-<html lang="en" ng-app='NarrowItDownApp'>
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!DOCTYPE html>
+<html lang="en" ng-app="NarrowItDownApp">
 
-    <!-- Bootstrap CSS -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Narrow Down Your Menu Choice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
-    <title>Searching the menu</title>
-  </head>
-  <body>
-    <div class="container mt-3" ng-controller='NarrowItDownController as menu'>
-        <div class="row mt-5 justify-content-center" >
-            <h1>MY PERSONALISED MENU</h1>
-        </div>
-        <div class="row mt-3 justify-content-center" >
-            <div class="col-sm-8">
-                <input type="text" class="form-control" ng-model='menu.describe' placeholder="Enter description for the item">
+</head>
+
+<body>
+    <div class="container" ng-controller="NarrowItDownController as menu">
+        <h1 style="color: white;">Narrow Down Your Chinese Menu Choice</h1>
+        <div class="search">
+            <input type="text" placeholder="search term" class="form-control" ng-model="menu.shortName">
+            <div class="narrow-button">
+                <button class="btn btn-outline-light" ng-click="menu.matchedMenuItems(menu.shortName)">Narrow It Down For Me!</button>
             </div>
-            <div class="col-sm-3">
-                <button class="btn btn-outline-light" ng-click='menu.getMatchedMenuItems(menu.describe)'>Narrow It Down!</button>
-            </div>
-            
         </div>
-       
-            <found-items found-items="menu.found" on-remove="menu.removeMenuItem(index)" on-empty="menu.message"></found-items>
-      
-        
+        <found-items found-items="menu.found" on-remove="menu.removeMenuItem(index)" on-empty="menu.message"></found-items>
     </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  </body>
+</body>
+
 </html>
