@@ -17,7 +17,7 @@
     <div class="container" ng-controller="NarrowItDownController as menu">
         <h1 style="color: white;">Narrow Down Your Chinese Menu Choice</h1>
         <div class="search">
-            <input type="text" placeholder="search term" class="form-control" ng-model="menu.shortName">
+            <input type="text" placeholder="Enter description (for eg. chicken)" class="form-control" ng-model="menu.shortName">
             <div class="narrow-button">
                 <button class="btn btn-outline-light" ng-click="menu.matchedMenuItems(menu.shortName)">Narrow It Down For Me!</button>
             </div>
